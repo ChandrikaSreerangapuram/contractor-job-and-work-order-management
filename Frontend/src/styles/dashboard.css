@@ -1,0 +1,256 @@
+/* frontend/src/styles/dashboard.css */
+
+:root {
+    --primary-color: #007bff; /* Blue */
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d; /* Grey */
+    --text-color: #333;
+    --text-light: #fff;
+    --background-light: #f8f9fa;
+    --background-dark: #e9ecef;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --hover-light: #f0f0f0;
+    --success-color: #28a745; /* Green for success messages */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    color: var(--text-color);
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.dashboard-title {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+/* New style for navigation buttons */
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: var(--background-dark);
+}
+
+.logout-button {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.dashboard-main {
+    flex-grow: 1;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.dashboard-section {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    padding: 25px;
+}
+
+.dashboard-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--background-dark);
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* New input group styles */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.input-group input[type="text"],
+.input-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--card-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group input[type="text"]:focus,
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.item-list li {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.secondary-button {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+/* Form message for job upload success/error */
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.form-message.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.form-message.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+
+.dashboard-footer {
+    background-color: var(--text-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dashboard-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dashboard-main {
+        padding: 20px;
+        grid-template-columns: 1fr; /* Stack sections on smaller screens */
+        gap: 20px;
+    }
+}

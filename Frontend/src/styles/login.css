@@ -1,0 +1,149 @@
+/* frontend/src/styles/login.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Blue */
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d; /* Grey */
+    --text-color: #333;
+    --text-light: #fff;
+    --background-light: #f8f9fa;
+    --background-dark: #e9ecef;
+    --card-background: #ffffff;
+    --border-color: #ced4da;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --error-color: #dc3545; /* Red */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    color: var(--text-color);
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-light); /* Changed to solid light grey */
+    padding: 20px;
+}
+
+.login-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-title {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.login-form .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't expand the element */
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus,
+.login-form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.login-form select {
+    appearance: none; /* Remove default select styles */
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.3-6.4H18.8c-5%200-9.3%201.8-13.3%206.4-4%204.6-6.4%2010.5-6.4%2016.9%200%206.3%202.4%2012.3%206.4%2016.9l127.9%20127.9c4%204.6%209.1%206.9%2014.2%206.9s10.2-2.3%2014.2-6.9L287%20103.2c4-4.6%206.4-10.5%206.4-16.9S291%2074%20287%2069.4z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px; /* Make space for the arrow */
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.error-message {
+    color: var(--error-color);
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-card {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    .login-title {
+        font-size: 1.8em;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
